@@ -1,0 +1,18 @@
+version: '2'
+services:
+  app:
+    build: app
+    ports:
+    - "8080:8080"
+    links:
+    - mysql-server
+
+  mysql-server:
+    image: mysql:latest
+    environment:
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: testdb
+    ports:
+    - "3306:3306"

@@ -1,0 +1,3 @@
+FROM tomcat:latest
+ENV TOMCAT_WEBDIR /usr/local/tomcat/webapps
+COPY db-application.war $TOMCAT_WEBDIR/db-application.war
